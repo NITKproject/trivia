@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bio"
     tools:context=".z">
+
     <Button
         android:id="@+id/exitz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#F7A07F"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,47 +96,50 @@
         android:layout_width="278dp"
         android:layout_height="34dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/ctextz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toEndOf="@+id/bbuttonz"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.967" />
+        app:layout_constraintVertical_bias="0.936" />
 
     <TextView
         android:id="@+id/textViewz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="307dp"
+        android:layout_height="99dp"
         android:width="350dp"
         android:height="100dp"
-        android:background="@color/colorAccent"
+        android:background="#F0EA87"
         android:text="Press next to continue"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/exitz"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.313" />
 
     <TextView
         android:id="@+id/atextz"
         android:layout_width="273dp"
         android:layout_height="38dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btextz"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/abuttonz"
         app:layout_constraintTop_toBottomOf="@+id/textViewz"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintVertical_bias="0.777" />
 
     <TextView
         android:id="@+id/ctextz"
         android:layout_width="275dp"
         android:layout_height="34dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/dtextz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.369"
@@ -146,16 +152,18 @@
         android:layout_width="271dp"
         android:layout_height="43dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/nextz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toEndOf="@+id/dbuttonz"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.97" />
+
     <TextView
         android:id="@+id/yourscorez"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="84dp"
+        android:layout_height="23dp"
         android:width="110dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -180,7 +188,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/yourscorez"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.076" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

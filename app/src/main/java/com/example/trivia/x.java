@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +13,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Random;
+
 
 public class x extends AppCompatActivity {
        Button exit;
@@ -22,8 +26,12 @@ public class x extends AppCompatActivity {
     ImageButton abutton,bbutton,cbutton,dbutton;
     TextView scorex;
 
-    int QuestionNnumber=-1;
+    int count=-1;
+    int QuestionNnumber;
+    int p=0;
     Integer score=0;
+    Random random=new Random();
+    Handler handler=new Handler();
 
     xquestions[] questionBankx=new xquestions[]{
             new xquestions(R.string.x1,"a"),
@@ -52,6 +60,9 @@ public class x extends AppCompatActivity {
             "Leanne","Mary Shelly","Mahatma Gandhi","Robert Baratheon","Annabelle Lee","Edgar Allen Poe","Arundhati Roy","Aniruddh Ghosh","Dance","Portia"
     };
 
+    int[] numbers=new int[]{0,1,2,3,4,5,6,7,8,9};
+
+
 
 
     @Override
@@ -73,6 +84,10 @@ public class x extends AppCompatActivity {
         dbutton=findViewById(R.id.dbutton);
         scorex=findViewById(R.id.score);
 
+        shuffle(numbers);
+
+
+
 
 
         exit.setOnClickListener(new View.OnClickListener() {
@@ -86,26 +101,10 @@ public class x extends AppCompatActivity {
         abutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(QuestionNnumber!=-1) {
+                if(count!=-1) {
 
 
                     checkanswer("a");
-
-                    QuestionNnumber = QuestionNnumber + 1;
-                    if (QuestionNnumber == 10) {
-                        questions.setText("Game over...\n Your score is " + score.toString());
-                        atext.setText(" ");
-                        btext.setText("");
-                        ctext.setText(" ");
-                        dtext.setText("");
-                    } else {
-                        questions.setText(questionBankx[QuestionNnumber].getQuestionId());
-                        atext.setText(a[QuestionNnumber]);
-                        btext.setText(b[QuestionNnumber]);
-                        ctext.setText(c[QuestionNnumber]);
-                        dtext.setText(d[QuestionNnumber]);
-
-                    }
                 }
                 else
                     questions.setText("Press next or exit to continue");
@@ -118,25 +117,10 @@ public class x extends AppCompatActivity {
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(QuestionNnumber!=-1) {
+                if(count!=-1) {
 
                     checkanswer("b");
 
-                    QuestionNnumber = QuestionNnumber + 1;
-                    if (QuestionNnumber == 10) {
-                        questions.setText("Game over...\n Your score is " + score.toString());
-                        atext.setText(" ");
-                        btext.setText("");
-                        ctext.setText(" ");
-                        dtext.setText("");
-                    } else {
-                        questions.setText(questionBankx[QuestionNnumber].getQuestionId());
-                        atext.setText(a[QuestionNnumber]);
-                        btext.setText(b[QuestionNnumber]);
-                        ctext.setText(c[QuestionNnumber]);
-                        dtext.setText(d[QuestionNnumber]);
-
-                    }
                 }
                 else
                     questions.setText("Press next or exit to continue");
@@ -146,24 +130,8 @@ public class x extends AppCompatActivity {
         cbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(QuestionNnumber!=-1) {
+                if(count!=-1) {
                     checkanswer("c");
-
-                    QuestionNnumber = QuestionNnumber + 1;
-                    if (QuestionNnumber == 10) {
-                        questions.setText("Game over...\n Your score is " + score.toString());
-                        atext.setText(" ");
-                        btext.setText("");
-                        ctext.setText(" ");
-                        dtext.setText("");
-                    } else {
-                        questions.setText(questionBankx[QuestionNnumber].getQuestionId());
-                        atext.setText(a[QuestionNnumber]);
-                        btext.setText(b[QuestionNnumber]);
-                        ctext.setText(c[QuestionNnumber]);
-                        dtext.setText(d[QuestionNnumber]);
-
-                    }
                 }
                 else
                     questions.setText("Press next or exit to continue");
@@ -173,25 +141,9 @@ public class x extends AppCompatActivity {
         dbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              if(QuestionNnumber!=-1) {
+              if(count!=-1) {
                   checkanswer("d");
 
-                  QuestionNnumber = QuestionNnumber + 1;
-                  if (QuestionNnumber == 10) {
-                      questions.setText("Game over....\n Your score is " + score.toString());
-                      atext.setText(" ");
-                      btext.setText("");
-                      ctext.setText(" ");
-                      dtext.setText("");
-                  } else {
-
-                      questions.setText(questionBankx[QuestionNnumber].getQuestionId());
-                      atext.setText(a[QuestionNnumber]);
-                      btext.setText(b[QuestionNnumber]);
-                      ctext.setText(c[QuestionNnumber]);
-                      dtext.setText(d[QuestionNnumber]);
-
-                  }
               }
               else
                   questions.setText("Press Next or Exit to continue");
@@ -201,26 +153,15 @@ public class x extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                QuestionNnumber=QuestionNnumber+1;
-                if(QuestionNnumber==10)
-                {questions.setText("Game over...\n Your score is "+score.toString());
-                    atext.setText(" ");
-                    btext.setText("");
-                    ctext.setText(" ");
-                    dtext.setText("");}
-                else
-                {questions.setText(questionBankx[QuestionNnumber].getQuestionId());
-                    atext.setText(a[QuestionNnumber]);
-                    btext.setText(b[QuestionNnumber]);
-                    ctext.setText(c[QuestionNnumber]);
-                    dtext.setText(d[QuestionNnumber]);}
+               updateQuestion();
             }
         });
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                QuestionNnumber=QuestionNnumber-1;
-                if(QuestionNnumber==-1)
+                count=count-1;
+                QuestionNnumber=p;
+                if(count==-2)
 
                 {
                     questions.setText("Press next or exit to continue");
@@ -249,17 +190,75 @@ public class x extends AppCompatActivity {
             toast=R.string.correct;
             score=score+1;
             scorex.setText(score.toString());
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    updateQuestion();
+                }
+            },1200);
 
 
         }
         else{
            // shake_animation();
             toast=R.string.wrong;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    updateQuestion();
+                }
+            },1200);
         }
         Toast.makeText(x.this, toast, Toast.LENGTH_SHORT).show();
 
 
     }
+     public int[] shuffle(int[] num){
+        int temp;
+        int a1;
+        //int a2=random.nextInt(10);
+
+         for (int i=0;i<3;i++)
+         {
+             a1=random.nextInt(10);
+
+             temp=num[a1];
+             num[a1]=num[9-a1];
+             num[9-a1]=temp;}
+
+      // if(a1!=a2) {
+          //  temp = num[a2];
+           // num[a2] = num[9 - a2];
+           // num[9 - a2] = temp;
+
+
+        return num;
+
+     }
+     public void updateQuestion(){
+         count = count + 1;
+         p=QuestionNnumber;
+
+         if (count == 10) {
+             questions.setText("Game over...\n Your score is " + score.toString());
+             atext.setText(" ");
+             btext.setText("");
+             ctext.setText(" ");
+             dtext.setText("");
+         } else {
+             QuestionNnumber=numbers[count];
+
+             questions.setText(questionBankx[QuestionNnumber].getQuestionId());
+             atext.setText(a[QuestionNnumber]);
+             btext.setText(b[QuestionNnumber]);
+             ctext.setText(c[QuestionNnumber]);
+             dtext.setText(d[QuestionNnumber]);
+
+         }
+     }
+
+
+
     //private void shake_animation(){
         //Animation shake= AnimationUtils.loadAnimation(x.this,R.anim.anim_shake);
        // questions.setAnimation(shake);

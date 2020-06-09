@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sport"
     tools:context=".y">
 
     <Button
         android:id="@+id/exity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00BCD4"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.947" />
 
     <ImageButton
         android:id="@+id/nexty"
@@ -24,10 +25,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.749"
+        app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817"
+        app:layout_constraintVertical_bias="0.832"
         app:srcCompat="@android:drawable/ic_media_next" />
 
     <ImageButton
@@ -38,10 +39,10 @@
         android:layout_marginLeft="104dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nexty"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.006"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817"
+        app:layout_constraintVertical_bias="0.844"
         app:srcCompat="@android:drawable/ic_media_previous" />
 
     <ImageButton
@@ -97,12 +98,13 @@
         android:layout_width="278dp"
         android:layout_height="34dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/ctexty"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toEndOf="@+id/bbuttony"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.951" />
 
     <TextView
         android:id="@+id/textViewy"
@@ -114,6 +116,7 @@
         android:text="Press next to continue"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/exity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.704"
@@ -126,55 +129,59 @@
         android:layout_width="273dp"
         android:layout_height="38dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btexty"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintHorizontal_bias="0.335"
         app:layout_constraintStart_toEndOf="@+id/abuttony"
         app:layout_constraintTop_toBottomOf="@+id/textViewy"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <TextView
         android:id="@+id/ctexty"
         android:layout_width="275dp"
         android:layout_height="34dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/dtexty"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.246"
         app:layout_constraintStart_toEndOf="@+id/cbuttony"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964" />
+        app:layout_constraintVertical_bias="0.954" />
 
     <TextView
         android:id="@+id/dtexty"
         android:layout_width="258dp"
         android:layout_height="33dp"
         android:text=""
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/nexty"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toEndOf="@+id/dbuttony"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.99" />
+        app:layout_constraintVertical_bias="0.954" />
+
     <TextView
         android:id="@+id/yourscorey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="22dp"
         android:width="110dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your score:"
         app:layout_constraintBottom_toTopOf="@+id/textViewy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.054" />
 
     <TextView
         android:id="@+id/scorey"
-        android:layout_width="58dp"
-        android:layout_height="39dp"
+        android:layout_width="23dp"
+        android:layout_height="20dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -184,7 +191,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/yourscorey"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.047" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
